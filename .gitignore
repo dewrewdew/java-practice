@@ -1,27 +1,21 @@
-# Compiled class file
+# Compiled files
 *.class
+*.jar
 
-# Log files
-*.log
-*.bin
-
-# Package Files
-# *.jar
-# *.war
-# *.ear
-
-# Maven/Gradle artifacts
-target/
-build/
-
-# IDE Specific Files (Eclipse, IntelliJ, etc.)
-.classpath
+# IDE (Eclipse, IntelliJ) files
 .project
+.classpath
 .settings/
 *.iml
 *.ipr
 *.iws
 
-# OS generated files
+# Build and log folders
+bin/
+target/
+build/
+*.log
+
+# OS files
 .DS_Store
 Thumbs.db
