@@ -1,0 +1,27 @@
+# Compiled class file
+*.class
+
+# Log files
+*.log
+*.bin
+
+# Package Files
+# *.jar
+# *.war
+# *.ear
+
+# Maven/Gradle artifacts
+target/
+build/
+
+# IDE Specific Files (Eclipse, IntelliJ, etc.)
+.classpath
+.project
+.settings/
+*.iml
+*.ipr
+*.iws
+
+# OS generated files
+.DS_Store
+Thumbs.db
