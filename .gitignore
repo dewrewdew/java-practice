@@ -1,28 +1,4 @@
-# Compiled files
-*.class
-*.jar
+scanner 한글 출력 안될 때
 
-# IDE (Eclipse, IntelliJ) files
-.project
-.classpath
-.settings/
-*.iml
-*.ipr
-*.iws
 
-# Build and log folders
-bin/
-target/
-build/
-*.log
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# VS Code 설정 폴더 및 기타 불필요한 항목
-.vscode/
-*.class
-*.jar
-bin/
-target/
+Scanner scanner = new Scanner(new InputStreamReader(System.in, Charset.forName("MS949")));
