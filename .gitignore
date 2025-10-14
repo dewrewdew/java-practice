@@ -1,4 +1,14 @@
-scanner 한글 출력 안될 때
+# ------------------------------------
+# 1. 모든 폴더와 파일을 기본적으로 제외
+# 모든 파일과 폴더를 무시합니다. (src 폴더를 포함하여)
+*
 
+# ------------------------------------
+# 2. 예외 처리: src 폴더와 .gitignore 파일만 포함
+# '!' 표시는 무시하지 않고 포함시키겠다는 의미입니다.
+# Git이 .gitignore 파일 자체를 추적해야 하므로 포함합니다.
+!.gitignore
 
-Scanner scanner = new Scanner(new InputStreamReader(System.in, Charset.forName("MS949")));
+# src 폴더와 그 안의 모든 내용을 포함시킵니다.
+!src/
+!src/**
