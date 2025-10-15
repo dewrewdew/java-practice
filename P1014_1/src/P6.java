@@ -1,6 +1,7 @@
 public class P6 {
     public static void main(String[] args) {
         Student s1 = new Student("민지", 30);
+        s1.age = 25;
         s1.introduce();
 
     }
