@@ -13,7 +13,7 @@ public class P3_1 {
 
 class Student2 {
         String name;
-        int age;    
+        int age;
         int score;
 
 
