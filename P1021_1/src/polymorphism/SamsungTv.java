@@ -18,6 +18,7 @@ package polymorphism;
 
 // <6> 여기도 interface랑 엮어주기!
 public class SamsungTv implements Tv {
+    private Speaker speaker;
     public void powerOn() {
         System.out.println("삼성 티비 전원을 켠다.");
     }
@@ -25,9 +26,9 @@ public class SamsungTv implements Tv {
         System.out.println("삼성 티비 전원을 끈다.");
     }
     public void volumeUp() {
-        System.out.println("삼성 티비 볼륨을 올린다.");
+        speaker.soundUp();
     }
     public void volumeDown() {
-        System.out.println("삼성 티비 볼륨을 내린다.");
+        speaker.soundDown();
     }
 }

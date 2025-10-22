@@ -17,7 +17,11 @@ package polymorphism;
 // }
 
 public class LgTv implements Tv {
+    private Speaker speaker;
     // <5> 이제 interface가 왜 필요한 지 알았으니 전부 변경하기!!
+    public LgTv(Speaker speaker) {
+        this.speaker = speaker;
+    }
     public void powerOn() {
         System.out.println("엘지티비 전원을 켠다.");
     }
@@ -25,9 +29,9 @@ public class LgTv implements Tv {
         System.out.println("엘지티비 전원을 끈다.");
     }
     public void volumeUp() {
-        System.out.println("엘지티비 소리를 올린다.");
+        speaker.soundUp();
     }
     public void volumeDown() {
-        System.out.println("엘지티비 소리를 내린다.");
+        speaker.soundDown();
     }
 }

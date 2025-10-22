@@ -15,7 +15,8 @@ public class BeansContainer {
     private User user;
     public BeansContainer() {
         // 생성 및 조립 설정
-        Tv tv = new SamsungTv();
+        Speaker speaker = new AppleSpeaker();
+        Tv tv = new LgTv(speaker); // DI
         user = new User(tv); //DI => 생성자 주입이 가능하게 하는 코드
     }
 

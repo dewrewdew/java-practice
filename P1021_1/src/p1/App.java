@@ -24,7 +24,7 @@ interface Flyable {
 interface Walkable {
     public void walk();
 }
-
+// "인터페이스"에 익숙해지는게 1021 목표!!
 class Person implements Walkable {
     public void walk() {
         System.out.println("사람의 로직으로 걷습니다.");
