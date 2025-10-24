@@ -56,7 +56,7 @@ public class Controller {
 
     private void bye() {
         IoManager.print("프로그램이 종료됩니다.");
-        IoManager.print("이용해주셔서 감사합니다.");        
+        IoManager.print("이용해주셔서 감사합니다.");
     }
 
     private void showMenu() {

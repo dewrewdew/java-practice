@@ -24,7 +24,7 @@ public class StudentDto {
     // No Argument Constuctor
     public StudentDto() { }
 
-    // setter, getter => field에 직접 접근이 불가하므로(private) 메서드로 접근하겠다. => 당연히 public으로 생성(입력 받아와야 하니까)
+    // setter, getter => field(private)에 직접 접근이 불가하므로 메서드로 접근하겠다. => 당연히 public으로 생성(입력 받아와야 하니까)
     // 문법은 메서드지만 개념적으로는 기능으로 분류 안함! => 값만 입력받는 느낌(write 권한만 해당)
     
     

@@ -10,6 +10,7 @@ public class App {
     public static void main(String[] args) { // main은 여기 하나밖에 없으니 어느 패키지에서 실행버튼 눌러도 여기서 실행됨! 보통 main문은 짧음!
         // System.out.println("안녕하세요"); => 프로젝트 만들고 1회 시행해보기 (test)
 
+        
         // StudentDto s1 = new StudentDto();
         // s1.name = "한조";
         // s1.setName("한조"); // s1.name = "한조"; 불가!! 왜? StudentDto class field가 private이니까!! 기입하고싶으면 set 읽어오고싶으면 get

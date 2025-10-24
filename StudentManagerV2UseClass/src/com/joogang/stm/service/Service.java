@@ -18,7 +18,7 @@ public class Service {
         int score = Integer.parseInt(IoManager.input("점수 입력 > "));
 
         // StudentDto studentDto = new StudentDto(name, age, score); => 인스턴스를 여기서 생성하면 기입하고 사라지고 새로생성하고 기록이안됨.
-        // => "배열"을 사용하여 값을 "기록"해야 함. 별도 공간에서 기재하려 함!
+        // => "배열"을 사용하여 값을 "기록"해야 함. 별도 공간에서 기재하려 함! => 요게 repository에 작성한거!
 
         // <7> studentDto 주고받는 메서드 작성
         StudentDto studentDto = new StudentDto(name, age, score);
@@ -75,7 +75,7 @@ public class Service {
     IoManager.print("총 " + count + "명의 정보가 삭제되었습니다.");
 
 
-    IoManager.print("=============================");        
+    IoManager.print("=============================");
     }
 
     // <13> "통계" 기능 구현 => 이건 repository로 넘길 필요 x

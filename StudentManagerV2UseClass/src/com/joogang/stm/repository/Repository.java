@@ -15,11 +15,14 @@ public class Repository {
     
     // <7>
     private int count = 0;
+    // 아래 메서드들에서 실제 어디까지 저장되어있는지 알 수 있는 변수가 필요
+    // 따라서 멤버변수 = 인스턴스변수로 선언!
 
 
     public void save(StudentDto studentDto) {
         list[count] = studentDto;
         count++;
+        // count의 역할 : 다음에 값을 저장할 배열의 위치를 가리킴
     }
 
     // <8> 아래 내용 반영 위해 return list;를 수정 => 안전하게 복사해둔 배열(new list)을 return하는걸로(그래야 잘못된 값이 들어와도 원본은 멀쩡함)
@@ -44,7 +47,7 @@ public class Repository {
         return newList;
     }
 
-    // <9> 총 몇명의 데이터가 있는지 구하기 => 여기부터는 뒤에서부터 작성(결과부터 작성하는 느낌)
+    // <9> 한 이름으로된 정보가 총 몇 개 있는지 구하기 => 여기부터는 뒤에서부터 작성(결과부터 작성하는 느낌)
     public StudentDto[] findByNameContaining(String searchWord) {
         int searchCount = 0;
         for(int i = 0 ; i < count ; i++) {
@@ -62,7 +65,10 @@ public class Repository {
                 int score = list[i].getScore();
                 StudentDto studentDto = new StudentDto(name, age, score);
                 newList[newListCount] = studentDto;
+                newListCount++;
+                
             }
+            
         }
         return newList;
 

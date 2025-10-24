@@ -1,10 +1,9 @@
-package r1001casino;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        casinoIoManager ioManager = new casinoIoManager();
         int coin = 3000;
         int bet = 0;
 
@@ -17,7 +16,7 @@ public class App {
             if(coin <= 0) {
                 System.out.println("금액이 모두 소진되었습니다.");
                 System.out.println("게임을 종료합니다.");
-                break; 
+                break;
 
             }            
             
@@ -30,6 +29,7 @@ public class App {
             System.out.println("0. 게임 종료");
             System.out.print("선택 > ");
             String command = scanner.nextLine();
+
             // 게임 종료
             if(command.equals("0")) {
                 break;
@@ -73,6 +73,48 @@ public class App {
         }   else if(command.equals("2")) {
             System.out.println("====가위바위보 게임을 시작합니다.====");
             System.out.println("이기면 베팅 금액의 2배가 적립되고, 비기면 보존되며, 지면 베팅 금액의 2배만큼 차감됩니다.");
+            ioManager.getValidBetAmount(coin, scanner);
+
+            System.out.print("아래 선택지 중 하나를 선택하세요.\n1. 가위\n2. 바위\n3. 보\n선택 > ");
+            String userGuess = scanner.nextLine();
+            int computerChoice = (int)(Math.random() * 3);
+            String strComputerChoice = computerChoice + "";
+            String array[] = new String[3];
+            array[0] = "가위";
+            array[1] = "바위";
+            array[2] = "보";
+            String outputComputerChoice = array[computerChoice];
+            System.out.println(outputComputerChoice + "이(가) 나왔습니다.");
+            // 비기는 경우
+            int compareChoice = computerChoice + 1;
+            if(compareChoice == Integer.parseInt(userGuess)) {
+                System.out.println("비겼습니다. 코인은 그대로 유지됩니다.");
+            // 이기는 경우
+            } else if(compareChoice == 1 && userGuess.equals("2")) {
+                System.out.println("이겼습니다. 베팅하신 금액의 2배 " + bet + "원이 적립됩니다.");
+                coin += bet*2;
+            } else if(compareChoice == 2 && userGuess.equals("3")) {
+                System.out.println("이겼습니다. 베팅하신 금액의 2배 " + bet + "원이 적립됩니다.");
+                coin += bet*2;
+            } else if(compareChoice == 3 && userGuess.equals("1")) {
+                System.out.println("이겼습니다. 베팅하신 금액의 2배 " + bet + "원이 적립됩니다.");
+                coin += bet*2;
+            // 지는 경우
+            } else if(compareChoice == 2 && userGuess.equals("1")) {
+                System.out.println("졌습니다. 베팅하신 금액의 2배 " + bet + "원이 차감됩니다.");
+                coin -= bet*2;
+            } else if(compareChoice == 3 && userGuess.equals("2")) {
+                System.out.println("졌습니다. 베팅하신 금액의 2배 " + bet + "원이 차감됩니다.");
+                coin -= bet*2;
+            } else if(compareChoice == 1 && userGuess.equals("3")) {
+                System.out.println("졌습니다. 베팅하신 금액의 2배 " + bet + "원이 차감됩니다.");
+                coin -= bet*2;
+            }
+            // 3. 로또
+        }   else if(command.equals("3")) {
+            System.out.println("====로또 게임을 시작합니다.====");
+            System.out.println("전부 맞추시면 1등, 5개를 맞추시면 2등, 4개를 맞추시면 3등 입니다.");                
+            System.out.println("누적 금액은 각각 베팅 금액의 5배, 3배, 2배입니다.");
             while(true){
                 System.out.print("베팅 금액을 입력해주세요 (남은 금액 : " + coin + "원) > ");
                 bet = Integer.parseInt(scanner.nextLine());
@@ -82,48 +124,7 @@ public class App {
                 break;
             }
             }
-            System.out.print("아래 선택지 중 하나를 선택하세요.\n1. 가위\n2. 바위\n3. 보\n선택 > ");
-            String userGuess = scanner.nextLine();
-            int computerChoice = (int)(Math.random() * 3) + 1;
-            String strComputerChoice = computerChoice + "";
-            String array[] = new String[3];
-            array[0] = "가위";
-            array[1] = "바위";
-            array[2] = "보";
-            String outputComputerChoice = array[Integer.parseInt(userGuess)];
-            System.out.println(outputComputerChoice + "이 나왔습니다.");
-            // 비기는 경우
-            if(computerchoce == Integer.parseInt(userGuess)) {
-                System.out.println("비겼습니다. 코인은 그대로 유지됩니다.");
-            // 이기는 경우
-            } else if(strComputerChoice == "1" && userGuess == "2") {
-                System.out.println("이겼습니다. 베팅하신 금액의 2배 " + bet + "원이 적립됩니다.");
-                coin += bet*2;
-            } else if(strComputerChoice == "2" && userGuess == "3") {
-                System.out.println("이겼습니다. 베팅하신 금액의 2배 " + bet + "원이 적립됩니다.");
-                coin += bet*2;
-            } else if(strComputerChoice == "3" && userGuess == "1") {
-                System.out.println("이겼습니다. 베팅하신 금액의 2배 " + bet + "원이 적립됩니다.");
-                coin += bet*2;
-            // 지는 경우
-            } else if(strComputerChoice == "2" && userGuess == "1") {
-                System.out.println("졌습니다. 베팅하신 금액의 2배 " + bet + "원이 차감됩니다.");
-                coin -= bet*2;
-            } else if(strComputerChoice == "3" && userGuess == "2") {
-                System.out.println("졌습니다. 베팅하신 금액의 2배 " + bet + "원이 차감됩니다.");
-                coin -= bet*2;
-            } else if(strComputerChoice == "1" && userGuess == "3") {
-                System.out.println("졌습니다. 베팅하신 금액의 2배 " + bet + "원이 차감됩니다.");
-                coin -= bet*2;
-            }
-            
-            
-            
 
-
-            
-        }   else if(command.equals("3")) {
-            // 3. 로또
         }   else if(command.equals("4")) {
             // 4. 업 앤 다운
         }   else if(command.equals("5")) {
@@ -143,6 +144,6 @@ public class App {
 
 
 
-
+    System.out.println("게임을 종료합니다.");
     }
 }
