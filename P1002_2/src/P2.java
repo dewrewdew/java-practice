@@ -5,4 +5,3 @@ public class P2 {
             // heap : new로 생성되는 메모리, 그 메모리를 참조하는 값이 없으면 GC(garbage Collector)가 수거해감
     }
 }
-
