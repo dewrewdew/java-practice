@@ -10,7 +10,6 @@ public class P4 {
         String str3 = "야호!!";
         if(str2.equals(str3)) {
         }
-
         if(str2.contains("호")) {
             
         }

@@ -34,7 +34,8 @@ public class App {
 
 // 일반화 되지 않은 class
 // class Calculator{
-    // void sumOneToTenAndPrintResult() { // 메서드를 로직에서 일일이 확인하지 않으려면 명칭을 정확히 기록해줘야함. sum이런식으로 쓰면 정확히 무슨 값을 리턴하는지 알 수 없음
+    // void sumOneToTenAndPrintResult() { 
+        // 메서드를 로직에서 일일이 확인하지 않으려면 명칭을 정확히 기록해줘야함. sum이런식으로 쓰면 정확히 무슨 값을 리턴하는지 알 수 없음
         // 1부터 10까지의 합
         // int sum = 0;
         // for(int i = 1; i <= 10; i++) {
