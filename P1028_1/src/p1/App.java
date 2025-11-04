@@ -70,6 +70,8 @@ class MyLinkedList {
         }
         // 꼬리 찾았음! 이제 마지막 노드에 다음 node를 연결하자!
         tempNode.next = newNode;
+        // 기본 타입은 '=' 기준으로 오른쪽 값을 왼쪽에 대입한다고 생각하고,
+        // 참조 타입은 왼쪽변수가 오른쪽 값을 가리킨다고 생각하자!!
     }
     // 삽입(최고 장점) => add 메서드가 서로 다른 매개변수로 오버로딩 되어있음!
     public void add(StudentDto data, int index) {
